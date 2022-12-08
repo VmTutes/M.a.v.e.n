@@ -23,88 +23,98 @@ Maven Index
 18. Maven profiles
 19. Maven dependency   
 
-
 Build Tool
 ----------
 
---> Build Management: is a process that we compile and assemble all the source code(written by developers) into object files.
-		ex: 100 app.java files
-		    100 object files(.class files)
+- Build :  is a process that we compile and assemble all the source code(written by developers) into object files.
+		
 Alternatives
 ------------
->>Grunt
->>Gulp
->>Ant--> Apache Foundation product
->>Gradle--> Alternative for Maven
->>Maven--> latest and updated one
+   
+- Ant--> Apache Foundation product   
+- Gradle--> Alternative for Maven   
+- Maven--> latest and updated one 
+- Grunt  
+- Gulp 
 
-Ant vs Maven:
+
+Ant vs Maven
 -------------
->> actions are defined in ant(so much of scripting)            >> in maven say what to do not how to do
->> sequences are defined in ant 		               >> how to build is defined in maven (life cycle)
->> no default directory structure   		               >> it fallows standard directory structure(default)
->> ant fallows you              		               >> you need to fallow maven
->> librarys are part of source code                            >> librarys are not part of source code
-    (difficult to maintain)	
+ - actions are defined in ant(so much of scripting) <<--------->>  in maven say what to do not how to do
+ - sequences are defined in ant 		               <<--------->> how to build is defined in maven (life cycle)
+ - no default directory structure   		               <<--------->> it fallows standard directory structure(default)
+ - ant fallows you              		               <<--------->> you need to fallow maven
+ - librarys are part of source code (difficult to maintain)    <<--------->> librarys are not part of source code
+    	
+Diff with other tools
+---------------------
+* open source
+* it is not only build tool and also project management tool
+* it has set of standards and object modules,so no need to instruct 	
+* default project lifecycle 
+* dependency management
 
---> diff with other tools
-	>> open source
-	>> it is not only build tool and also project management tool
-	>> it has set of standards and object modules,so no need to instruct 	
-	>> default project lifecycle 
-	>> dependency management
-
->> Compiling Source Code               
->> Packaging Biniries/artifacts
->> running Automated tests                         
->> Deploying to production system
->> Creating Documentation
+What maven do?
+--------------
+- Compiling Source Code               
+- Packaging Biniries/artifacts
+- running Automated tests                         
+- Deploying to production system
+- Creating Documentation
 
 Variables:
 ---------
-Environment Variables
-	# user
-	# system ($PATH)
-echo $HOME
-echo $SHELL
-env
-VARIABLENAME=vinodh
-unset VARIABLENAME
+-  Variables  :  variable is a name which holds/stores data. 
+	- user  :  user defind variables eg:- vmtutes = Vinodh-Machireddy-Tutorials
+	- system variables. :  Already created variables (or) pre-defind variables. eg:- echo $PATH, $HOME, $SHELL...etc
 
--->if we want to use variables globals(in all shel windows)then 
-export name=vinodh (in bashrc file)
+      Note:-  if we want to use variables globally   "export vmtutes = Vinodh-Machireddy-Tutorials" (in bashrc file)
 
 Maven Installation in Windows:  
 ------------------------------
---> install java above 7.1 version
---> Download java JDK & JRE (or)  http://www.oracle.com/technetwork/java/javase/downloads/index.html
---> Go to-->mycomputer-->properties-->Advanced system settings-->environment variables-->system variables
---> path    ;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jre1.8.0_131\bin;D:\Apache_Maven\bin  ---> to system variables PATH by seperater ;
-            JAVA_HOME should point to JDK(without bin)
-
---> install Maven
-Go to this website to downloab(Zip)--> maven.apache.org/download.cgi
-	D:\Apache_Maven ---> MAVEN_HOME in system variables
-	path--> ;D:\Apache_Maven\bin
+	@ install java above 7.1 version
+	@ Download java JDK & JRE (or)  http://www.oracle.com/technetwork/java/javase/downloads/index.html
+	@ Go to-->mycomputer-->properties-->Advanced system settings-->environment variables-->system variables
+	@ path    ;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Program Files\Java\jre1.8.0_131\bin;D:\Apache_Maven\bin  ---> to system variables PATH by seperater ;
+	@ JAVA_HOME should point to JDK(without bin)
+	@ install Maven
+	@ Go to this website to downloab(Zip)--> maven.apache.org/download.cgi
+		- D:\Apache_Maven ---> MAVEN_HOME in system variables
+		- path--> ;D:\Apache_Maven\bin
 
 maven installation in ec2
-=========================
-0. yum update -y
-   sudo -i
-1. yum install java-17-openjdk java-17-openjdk-devel
-2. Install Maven in /opt  directory
-    cd /opt
-3. Download apache maven 
-   wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
-     note:- yum install wget -y (by default wget package will not install in redhat Linux)
+-------------------------
+ 1. Switch to root user
+ 
+ 		sudo -i  (or) sudo su - root 
+ 2. Update ec2 instance
+ 
+	 	yum update -y 
+3. Install java openjdk 
 
-4. tar xvzf apache-maven-3.8.6-bin.tar.gz
-5. for permanent configuration
-     vi /etc/profile.d/maven.sh 
-     export MAVEN_HOME=/opt/apache-maven-3.8.6
-     export PATH=$PATH:$MAVEN_HOME/bin
-6. source /etc/profile.d/maven.sh
-mvn --version
+		yum install java-17-openjdk-devel -y
+4. Go to optional folder in root directory to install maven 
+
+		cd /opt
+5. Download apache maven 
+
+   		wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+		
+   note:- yum install wget -y (by default wget package will not install in redhat Linux)
+
+6. unzip tarball
+ 
+		tar xvzf apache-maven-3.8.6-bin.tar.gz
+7. for permanent configuration
+
+    	@  vi /etc/profile.d/maven.sh 
+    	@  export MAVEN_HOME=/opt/apache-maven-3.8.6
+    	@  export PATH=$PATH:$MAVEN_HOME/bin
+    
+8. give source where maven exists in the machine
+ 
+		source /etc/profile.d/maven.sh
+9. mvn --version
 
            o/p:- Apache Maven 3.8.6 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T19:33:14+01:00)
            	Maven home: /usr/local/src/apache-maven
