@@ -1,31 +1,31 @@
 # Maven
 VmTutes Maven
-			################### Maven ####################
-Maven Index:
-============
-# Overview of Maven  
-# Diff b/w Maven and Ant 
-# Diff b/w Maven and Other build tools  
-# How to install Maven in Windows
-# How to install Maven in Linux
-# Maven Architecture   
-# Maven Goles
-# Maven Life Cycle
-# Standard Directory Layout
-# GAV 
-# Maven local and remote repositories  
-# Packages and their types 
-# Sample Maven Project  
-# One by one goals executions
-# Build in and custom plugins
-# POM File
-# Maven SNAPSHORT
-# Maven profiles
-# Maven dependency   
+			
+Maven Index
+-----------
+1. Overview of Maven  
+2. Diff b/w Maven and Ant 
+3. Diff b/w Maven and Other build tools  
+4. How to install Maven in Windows
+5. How to install Maven in Linux
+6. Maven Architecture   
+7. Maven Goles
+8. Maven Life Cycle
+9. Standard Directory Layout
+10. GAV 
+11. Maven local and remote repositories  
+12. Packages and their types 
+13. Sample Maven Project  
+14. One by one goals executions
+15. Build in and custom plugins
+16. POM File
+17. Maven SNAPSHORT
+18. Maven profiles
+19. Maven dependency   
 
 
-Build Tools/Build Automation/Management/Process
-================================================
+Build Tool
+----------
 
 --> Build Management: is a process that we compile and assemble all the source code(written by developers) into object files.
 		ex: 100 app.java files
